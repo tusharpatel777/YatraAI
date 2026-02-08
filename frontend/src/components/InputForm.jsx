@@ -41,7 +41,7 @@ const InputForm = ({ setItinerary, setLoading }) => {
         setLoading(true);
         setItinerary(null);
         try {
-            const response = await axios.post('http://localhost:5000/api/itinerary/generate', {
+            const response = await axios.post('https://yatraai-lz0v.onrender.com/api/itinerary/generate', {
                 ...formData,
                 interests: formData.interests.length > 0 ? formData.interests.join(', ') : 'General Sightseeing',
                 transportMode: formData.transportMode.join(', ')
@@ -151,8 +151,8 @@ const InputForm = ({ setItinerary, setLoading }) => {
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => handleTransportChange(mode)}
                                 className={`text-sm px-4 py-2 rounded-full border transition-all duration-300 ${formData.transportMode.includes(mode)
-                                        ? 'bg-orange-500/20 text-orange-200 border-orange-500/50 shadow-sm'
-                                        : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white'
+                                    ? 'bg-orange-500/20 text-orange-200 border-orange-500/50 shadow-sm'
+                                    : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white'
                                     }`}
                             >
                                 {mode}
@@ -175,8 +175,8 @@ const InputForm = ({ setItinerary, setLoading }) => {
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => handleInterestChange(interest)}
                                 className={`text-sm px-4 py-2 rounded-full border transition-all duration-300 ${formData.interests.includes(interest)
-                                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white border-transparent shadow-[0_0_15px_rgba(37,99,235,0.5)]'
-                                        : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white'
+                                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white border-transparent shadow-[0_0_15px_rgba(37,99,235,0.5)]'
+                                    : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white'
                                     }`}
                             >
                                 {interest}
